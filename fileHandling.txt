@@ -1,0 +1,22 @@
+*. f = open('a.txt',mode='wt',encoding='utf-8') --> to write
+   f.write('some content\n')
+
+*. g = open('a.txt',mode='rt',encoding='utf-8') --> to read
+
+*. g.read(), g.readline(), g.read(32)--> bytes specified
+
+*. g.seek(0) --> begin of file
+
+*. g.readlines() --> read as list
+
+*. g.close() --> to close file
+
+*. h = open('a.txt',mode='at',encoding='utf-8') --> append
+
+*. h.writelines('some content\n') --> to append writelines()
+
+*. for line in g : --> iterate over files
+
+*.  use with ... as --> to avoid explicit close()
+
+*. 
