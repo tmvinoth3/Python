@@ -1,0 +1,123 @@
+**Sort**
+---------
+-r => reverse
+
+sort -r
+
+**Top 5 lines**
+----------------
+head -n 5
+
+**Create File**
+---------------
+echo "some text" > "filename.txt"
+printf "some text" > "filename.txt"
+
+**Create file for each line**
+-----------------------------
+awk '{print $0 > $1".txt"}' "filename.txt"
+
+**CUT**
+-------
+cut -b 1,2 "filename.txt"
+
+-b => get first and second bytes in each row
+-c => get first and second chars in each row
+
+cut -d "delimiter"
+
+tab is the default delimiter.
+
+cut -d "," -f  
+
+
+# Hello World Program in Bash Shell
+
+
+
+echo "Hello World!"
+
+#touch "cust.txt"
+
+echo "abc\ndef\nghi" > cust.txt
+
+cat > cust.txt
+
+
+echo -e "abc A\ndef D\nghi G\n jkl A" > "cust.txt"
+
+
+echo -e "1,a,alpha,\n2,b,beta,\n3,c,comma,\n123,a,test" > "cust.csv"
+
+
+
+#Displays file content
+#cat "cust.txt"
+
+awk '{print}' "cust.txt"
+
+
+awk '{print $1 > $2".txt"}' "cust.txt"
+
+
+
+#Delimit with comma and take only 2nd column 
+
+cat "cust.csv" | cut -d "," -f 2 
+
+
+
+#Delimit with comma and create file from 2nd column 
+
+awk -F',' '{print $0 > $2".csv"}' "cust.csv"
+
+
+
+#Replaces a with A
+
+cat "cust.csv" | sed 's/a/A/2'
+
+
+
+#Deletes range 3-end 
+
+cat "cust.csv" | sed '3,$d'
+
+
+
+#grep -o 'a' "cust.csv" | wc -w
+
+grep -l 'abc' a.txt b.txt c.txt
+
+#-n => for line number
+
+#-c => print line containig word
+
+#-v => invert search
+
+cat test.txt | grep '[[:digit:]]' | grep '[[:alpha:]]' | awk 'length($0) == 7 && !seen[$0]++'
+
+rename 's/\.jpg/\.jpeg/'
+
+#Change all pdf files to jpg in a directory
+rename .pdf .jpg *.pdf
+
+#reverse words in a string
+cat aim.txt | awk '{for(i=NF;i>=1;i--) printf("%s ",$i);}' 
+
+echo -e "a 10\nb 12\na 15\nc 20\nb 25" > grp.txt
+
+awk '{arr[$1]+=$2} END {for (key in arr) printf("%s\t%s\n", key, arr[key])}' grp.txt
+
+#sum group by column
+echo -e "a 1\nb 2\nc 3\na 3\nb 4" >  grp
+cat grp | awk '{arr[$1]+=$2} END {for(key in arr) printf("%s %s\n",key,arr[key])}' 
+
+#size of all files
+du -ch * 
+
+
+
+
+
+
