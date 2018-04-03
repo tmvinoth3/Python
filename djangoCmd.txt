@@ -1,0 +1,68 @@
+pip install virtualenv
+
+virtualenv vir_env
+
+#To activate virtual environment
+vir_env\Scripts\activate 
+
+django-admin startproject django_practice
+
+django-admin startapp myApp
+
+#Include myapp in settings.py
+#Make sure debug off in production
+
+python manage.py makemigrations myapp
+
+#sql commands for models
+python manage.py sqlmigrate myapp 0001
+
+#apply migration
+python manage.py migrate
+
+#Set up credentials for admin site
+python manage.py createsuperuser
+
+#configure view in urls.py in myapp folder
+#configure myapp/urls.py to urls.py
+	
+from django.conf.urls import url
+
+python manage.py createsuperuser
+
+#Shell same like REPL
+python manage.py shell
+#To exit from shell
+exit 
+
+#insert value in database
+obj = Board(name = "testname", description = "testdescription")
+obj.save()
+#or
+obj = Board.objects.create(name = "testname", description = "testdescription") 
+
+#Get all objects
+Board.objects.all()
+Board.objects.get(id=1)
+
+#Load static to use bootstrap 
+{%load static%}
+
+(Donts)
+#Make sure use model = ModelName (not model:ModelName) in forms.py
+#Don't put comma(,) in GCBV
+
+#GCBV
+model
+fields
+template_name
+pk_url_kwarg
+context_object_name
+
+
+
+
+
+
+
+
